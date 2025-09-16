@@ -10,14 +10,13 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nome;
 
     @Column(nullable = false)
     private Double precoUnitario;
 
-    public Produto() {
-    }
+    public Produto() {}
 
     public Produto(Long id, String nome, Double precoUnitario) {
         this.id = id;
@@ -48,6 +47,4 @@ public class Produto {
     public void setPrecoUnitario(Double precoUnitario) {
         this.precoUnitario = precoUnitario;
     }
-
-
 }
